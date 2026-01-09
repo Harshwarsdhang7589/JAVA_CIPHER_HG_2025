@@ -1,41 +1,18 @@
-// package LECTURE03;
- 
-// ANOTHER WAY TO DEFINE A THREAD:[ NOT A STANDARD APPROACH: ]  
+// package THREAD PRIOIRITY;
 
-
-//        DURGA'S :PART 1 APPROACH OF DEFINING A THREAD
-public class MyThread extends Thread
-{
-    public void run()
-    {
-        System.out.println("Child thread");
-
-    }
-    /* public void start()
-
-    {
-        System.out.println("Child start Thread");
-    } */
+public class MyThread  extends Thread
+{    
+    
 }
-
 class Test
 {
     public static void main(String[] args) {
-        MyThread r=new MyThread();
-        Thread t=new Thread(r);
+        {
+            System.out.println(Thread.currentThread().getPriority());// normal priority :5
+            Thread.currentThread().setPriority(7);
 
-        t.start();
-        System.out.println("Main Thread:");
+            MyThread t1 = new MyThread();
+            System.out.println(t.getPriority());//7 output 5<7
+        }
     }
 }
-/*
-    OUTPUT: OBSERVATION 01:
-    D:\JAVA NON BOOK\MUTLITHREADING\LECTURE 03>javac MyThread.java
-
-D:\JAVA NON BOOK\MUTLITHREADING\LECTURE 03>java Test
-Main Thread:
-Child thread
-
-D:\JAVA NON BOOK\MUTLITHREADING\LECTURE 03>
-     */
-
